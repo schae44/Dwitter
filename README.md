@@ -3,6 +3,6 @@
 ## Tweets
 
 ```diff
-- GET
+- Tweet
+Schema
 ```
-/Tweets
