@@ -72,7 +72,7 @@ Request
     tweet
 }
 ```
-**PUT/tweets/:id**
+**DELETE/tweets/:id**
 ```diff
 delete tweet
 
