@@ -2,9 +2,7 @@
 
 ## Tweets
 
-```diff 
--Tweet Schema
-```
+**Tweet Schema**
 ```
 {
     id: string, // Twitter Id
@@ -15,3 +13,4 @@
     url: string // user profile's url
 }
 ```
+
