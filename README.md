@@ -14,8 +14,9 @@ JSON
     url: string // user profile's url
 }
 ```
+**GET**
 ```diff
-- GET/tweets
+***- GET/tweets***
 get all tweets
 Response 200
 {
