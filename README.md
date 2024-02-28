@@ -14,27 +14,26 @@ JSON
     url: string // user profile's url
 }
 ```
-**GET**
+**GET/tweets**
 ```diff
-***- GET/tweets***
 get all tweets
-Response 200
+- Response 200
 {
     [tweet, tweet, ...]
 }
 ```
+**GET/tweets?username=:username**
 ```diff
-- GET/tweets?username=:username
 get all tweets for user's username
-Response 200
+- Response 200
 {
     [tweet, tweet, ...]
 }
 ```
+**GET/tweets/:id**
 ```diff
-- GET/tweets/:id
 get tweet by id
-Response 200
+- Response 200
 {
     tweet
 }
