@@ -1,4 +1,4 @@
-# dwitter API Spec 
+# dwitter API Doc 
 
 ## Tweets
 
@@ -21,21 +21,36 @@ get all tweets
 {
     [tweet, tweet, ...]
 }
-```
+
 **GET/tweets?username=:username**
-```diff
+
 get all tweets for user's username
 - Response 200
 {
     [tweet, tweet, ...]
 }
-```
+
 **GET/tweets/:id**
-```diff
+
 get tweet by id
 - Response 200
 {
     tweet
 }
-```
+
+**POST/tweets**
+
+create new tweet
+
+Request
+{
+    text,
+    name,
+    username
+}
+
+- Response 201
+{
+    tweet
+}
 
