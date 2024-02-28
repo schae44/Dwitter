@@ -11,46 +11,70 @@ JSON
     createdAt: Date, // Date of Twitter created
     name: string, // Name of user
     username: string, // Username of user
-    url: string // user profile's url
+    url: string (optional) // user profile's url
 }
 ```
 **GET/tweets**
 ```diff
 get all tweets
+
 - Response 200
 {
     [tweet, tweet, ...]
 }
-
+```
 **GET/tweets?username=:username**
-
+```diff
 get all tweets for user's username
+
 - Response 200
 {
     [tweet, tweet, ...]
 }
-
+```
 **GET/tweets/:id**
-
+```diff
 get tweet by id
+
 - Response 200
 {
     tweet
 }
-
+```
 **POST/tweets**
-
+```diff
 create new tweet
 
 Request
 {
     text,
     name,
-    username
+    username,
+    url (optional)
 }
 
 - Response 201
 {
     tweet
 }
+```
+**PUT/tweets/:id**
+```diff
+update tweet
 
+Request
+{
+    text
+}
+
+- Response 200
+{
+    tweet
+}
+```
+**PUT/tweets/:id**
+```diff
+delete tweet
+
+- Response 204
+```
