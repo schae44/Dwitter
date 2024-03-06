@@ -28,7 +28,7 @@ export function getById(id) {
     return tweets.find((tweet) => tweet.id === id);
 }
 
-export function create(text, name, usernmae) {
+export function create(text, name, username) {
     const tweet = {
         id: Date.now().toString(),
         text,
