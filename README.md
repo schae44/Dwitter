@@ -130,8 +130,10 @@ JSON
 }
 ```
 **GET/auth/me**
+```
 JSON
 {
     token,
     username
 }
+```
