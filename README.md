@@ -78,3 +78,60 @@ delete tweet
 
 - Response 204
 ```
+
+# dwitter AUTH doc
+
+**User Schema**
+```
+JSON
+{
+    id: string, // User's unique ID
+    username: string, // Twitter ID
+    password: string, // Twitter content
+    name: string, // Name of user
+    email: string, // Email of user
+    url: string (optional) // user profile URL
+}
+```
+**POST/auth/signup**
+```diff
+- Request
+JSON
+{
+    username,
+    password,
+    name,
+    email,
+    url
+}
+
+- Response
+JSON
+{
+    token,
+    username
+}
+```
+
+**POST/auth/login**
+```diff
+- Request
+JSON
+{
+    username,
+    password
+}
+
+- Response
+JSON
+{
+    token,
+    username
+}
+```
+**GET/auth/me**
+JSON
+{
+    token,
+    username
+}
