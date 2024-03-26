@@ -33,7 +33,7 @@ export async function updateTweet(req, res, next) {
   if (!tweet) {
     return res.status(404).json({ message: `Tweet not found: ${id}` });
   }
-  if (tweet[0].userId !== req.userId) {
+  if (tweet.userId !== req.userId) {
     return res.sendStatus(403);
   }
   const updated = await tweetRepository.update(id, text);
@@ -46,7 +46,7 @@ export async function deleteTweet(req, res, next) {
   if (!tweet) {
     return res.status(404).json({ message: `Tweet not found: ${id}` });
   }
-  if (tweet[0].userId !== req.userId) {
+  if (tweet.userId !== req.userId) {
     return res.sendStatus(403);
   }
   await tweetRepository.remove(id);
