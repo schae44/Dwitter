@@ -1,20 +1,23 @@
-# dwitter API Doc 
+# dwitter API Doc
 
 ## Tweets
 
 **Tweet Schema**
+
 ```
 JSON
 {
-    id: string, // Twitter Id
-    text: string, // Twitter content
+    id: String, // Twitter Id
+    text: String, // Twitter content
     createdAt: Date, // Date of Twitter created
-    name: string, // Name of user
-    username: string, // Username of user
-    url: string (optional) // user profile's url
+    name: String, // Name of user
+    username: String, // Username of user
+    url: String  // (optional) user profile's url
 }
 ```
+
 **GET/tweets**
+
 ```diff
 get all tweets
 
@@ -23,7 +26,9 @@ get all tweets
     [tweet, tweet, ...]
 }
 ```
+
 **GET/tweets?username=:username**
+
 ```diff
 get all tweets for user's username
 
@@ -32,7 +37,9 @@ get all tweets for user's username
     [tweet, tweet, ...]
 }
 ```
+
 **GET/tweets/:id**
+
 ```diff
 get tweet by id
 
@@ -41,7 +48,9 @@ get tweet by id
     tweet
 }
 ```
+
 **POST/tweets**
+
 ```diff
 create new tweet
 
@@ -58,7 +67,9 @@ Request
     tweet
 }
 ```
+
 **PUT/tweets/:id**
+
 ```diff
 update tweet
 
@@ -72,7 +83,9 @@ Request
     tweet
 }
 ```
+
 **DELETE/tweets/:id**
+
 ```diff
 delete tweet
 
@@ -82,18 +95,21 @@ delete tweet
 # dwitter AUTH doc
 
 **User Schema**
+
 ```
 JSON
 {
-    id: string, // User's unique ID
-    username: string, // Twitter ID
-    password: string, // Twitter content
-    name: string, // Name of user
-    email: string, // Email of user
-    url: string (optional) // user profile URL
+    id: String, // User's unique ID
+    username: String, // Twitter ID
+    password: String, // Twitter content
+    name: String, // Name of user
+    email: String, // Email of user
+    url: String // (optional) user profile URL
 }
 ```
+
 **POST/auth/signup**
+
 ```diff
 - Request
 JSON
@@ -114,6 +130,7 @@ JSON
 ```
 
 **POST/auth/login**
+
 ```diff
 - Request
 JSON
@@ -129,7 +146,9 @@ JSON
     username
 }
 ```
+
 **GET/auth/me**
+
 ```
 JSON
 {
