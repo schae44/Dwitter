@@ -1,25 +1,24 @@
-// abcd1234: $2b$12$G9xf8SFq3oTEgdj7ozHQ/uhDOyeQcUEDU8tnOcvpvApuadr3nE5Vm
 import { getUsers } from "../database/database.js";
+import MongoDb from "mongodb";
+const ObjectId = MongoDb.ObjectId;
 
 export async function findByUsername(username) {
   return getUsers()
-    .findOne({ usernmae: username })
-    .then((data) => {
-      console.log(data);
-      return;
-    });
+    .findOne({ username }) //
+    .then(mapOptionalUser);
 }
 export async function findById(id) {
   return getUsers()
-    .findOne({ _id: id })
-    .then((data) => {
-      console.log(data);
-      return data;
-    });
+    .findOne({ _id: new ObjectId(id) })
+    .then(mapOptionalUser);
 }
 
 export async function createUser(user) {
   return getUsers()
     .insertOne(user)
     .then((data) => data.insertedId.toString());
+}
+
+function mapOptionalUser(user) {
+  return user ? { ...user, id: user._id.toString() } : user;
 }
